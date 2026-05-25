@@ -1,0 +1,732 @@
+Test Case ID,Test Category,Test Case Description,Input,Expected Output
+TC-FUNC-001,Functional Testing,Get Verified Screen Initial Load,"1. Open TruBlue app from fresh install
+2. Verify UI elements present
+3. Check for verification prompt
+4. Verify buttons available","Screen displays verification prompt with checkmark icon
+Verification text displays clearly
+Profile photo section visible
+Skip and Verify Selfie buttons present and enabled
+All text is legible and properly formatted"
+TC-FUNC-002,Functional Testing,Get Verified Popup - Don't Miss Out Modal,"1. Tap Verify Selfie button
+2. Modal popup appears with warning icon
+3. Verify all content displays
+4. Test close functionality
+5. Test action buttons","Modal popup appears with warning icon centered
+Title 'Don't Miss Out' displays
+All benefits listed with checkmarks:
+  - Connect with ID-verified members
+  - Receive 10 free Likes/month
+  - D-Verified Members Get 1 free TrueBoost
+  - ID-verified members receive 5 free Ultra Likes
+Restrictions listed with checkmarks:
+  - You can't communicate until you verify
+  - You can't like other users
+  - You can't match with other users
+X button closes modal and returns to previous screen
+Skip button skips verification
+Verify Selfie button proceeds to capture screen"
+TC-FUNC-003,Functional Testing,Selfie Capture Screen - Initial Load,"1. Proceed to selfie capture screen
+2. Grant camera permission if prompted
+3. Verify all UI elements present
+4. Check camera feed
+5. Review instructions","Camera view initializes without lag
+Circular frame guide displays prominently
+Capture button visible and accessible
+Instructions display: 'Position your face in the circle and hold still'
+Live video feed displays in capture frame
+Real-time preview of user's face shows
+Camera permission requested if needed
+No error messages on load"
+TC-FUNC-004,Functional Testing,Selfie Capture - Valid Image,"1. Position face clearly in circular frame
+2. Ensure proper lighting (well-lit, no shadows)
+3. Remove sunglasses/masks
+4. Keep camera steady
+5. Tap capture button
+6. Wait for processing","Image captures successfully without delay
+Processing begins immediately
+Wait Processing screen displays with loading spinner
+Message shows: 'Give us a bit to do our magic and we'll get you on your way'
+Processing completes within acceptable time
+Success screen appears with checkmark icon
+Title displays: 'Congratulations!'
+All 4 benefits listed with checkmarks:
+  - View a safer, more trusted feed
+  - Get double the Likes
+  - Receive 1 free TrueBoost
+  - Enjoy 5 free Ultra Likes/month
+TrueCheck badge visible on profile
+Continue button functional and proceeds to feed"
+TC-FUNC-005,Functional Testing,Selfie Capture - Face Not Visible,"1. Position face partially out of frame
+2. Cover face with hands
+3. Turn away from camera
+4. Attempt to capture
+5. Observe error message","System detects invalid face position
+System prevents invalid capture or flags as problematic
+Error screen displays with warning icon
+Message shows: 'Your face is not visible'
+Subtitle displays: 'Please make sure your face visible in the photo'
+Reference guide shown with two examples:
+  - Poor Visibility (red X)
+  - Good Visibility (green checkmark)
+Try Again button available and functional
+Clicking Try Again returns to capture screen for retry"
+TC-FUNC-006,Functional Testing,Selfie Capture - Invalid Photo Quality,"1. Capture with sunglasses on (blocking eyes)
+2. Capture with mask covering face
+3. Capture in poor lighting
+4. Submit image","Image submitted for validation
+Quality check analyzes image
+Quality check fails due to obstructions/poor lighting
+Error message displays: 'Poor quality' or similar message
+Instructions provided for improvement:
+  - Remove sunglasses/masks
+  - Use proper lighting
+  - Keep camera steady
+  - Face should properly fit in frame
+Update Selfie button available
+Clicking Update Selfie returns to camera for new attempt"
+TC-FUNC-007,Functional Testing,Processing State,"1. After valid capture, submit image
+2. Observe processing screen
+3. Wait for completion without interaction
+4. Monitor for timeout issues","Wait Processing screen appears immediately after capture
+Loading indicator (spinner) animates smoothly
+Message displays: 'Please wait'
+Subtitle message: 'Give us a bit to do our magic and we'll get you on your way'
+Processing doesn't timeout prematurely
+Screen doesn't freeze or become unresponsive
+Processing completes and transitions to success or failure screen
+Appropriate screen displays based on verification result"
+TC-FUNC-008,Functional Testing,Selfie Verification Success,"1. Submit valid, clear selfie image
+2. Wait for verification to complete
+3. Observe success screen
+4. Review all displayed information","Verification succeeds and processes successfully
+Success screen displays with large checkmark icon
+Verification status shows as completed
+Title displays: 'Congratulations!'
+Body text: 'You are now ID-verified and have full access to all features, including sending Likes, matching with other users, enjoying more secure and trusted experience'
+All 6 benefits displayed with green checkmarks:
+  - View a safer, more trusted feed with the option to see only ID-verified members
+  - Get double the Likes - 10 Likes for ID-verified members vs 5 for non-verified
+  - Receive 1 free TrueBoost per month
+  - Enjoy 5 free Ultra Likes every month
+  - Increase profile visibility and engagement with exclusive ID-verified perks
+TrueCheck gold badge awarded and visible
+Continue button functional and proceeds to main feed
+Profile reflects verified status"
+TC-FUNC-009,Functional Testing,Selfie Verification Failed,"1. Submit selfie that fails verification
+2. Observe failure screen
+3. Review retry options
+4. Test each retry button","Verification fails and processing completes
+Failure screen displays with red X icon
+Message displays: 'Selfie verification failed'
+Subtitle: 'Your profile did not pass selfie verification. Please try again by ensuring:'
+  - 'You take a clear selfie photo'
+  - 'You have at least one clear photo of your face in your profile pics'
+Retry options displayed with icons:
+  - Old Selfie button (shows previous attempt)
+  - Update Selfie button (launches camera)
+  - Profile Photo button (uses existing profile photo)
+  - Update Photo button (opens photo upload)
+  - OR divider between options
+Skip button available
+Try Again button functional and allows retry attempts"
+TC-FUNC-010,Functional Testing,Document Type Selection,"1. Navigate to document verification
+2. Verify popup modal appears
+3. Review available options
+4. Test button functionality","Document verification popup appears with title: 'Choose an option'
+Two action buttons displayed:
+  - 'Take a Photo' button with camera icon (teal/green)
+  - 'Upload from Gallery' button with gallery icon (teal/green)
+Cancel button available to close popup
+Tapping Take a Photo opens camera interface
+Tapping Upload from Gallery opens device photo library/file picker
+Tapping Cancel closes popup and returns to previous screen
+Modal has proper backdrop/overlay"
+TC-FUNC-011,Functional Testing,Document Capture - Front Side,"1. Select Take a Photo option
+2. Camera opens with frame guide
+3. Position document in frame
+4. Align document corners with guide
+5. Tap capture button
+6. Observe processing","Camera opens with document capture frame guide displayed
+Circular/rectangular frame overlays video feed
+Instructions display: 'Take a photo of your document's photo page'
+Document must align within frame boundaries
+Accepted documents listed: 'passport, ID card, driver's license'
+Live preview shows document positioning
+Capture button visible and accessible
+Tapping capture captures the image
+System validates document is in frame
+Image saves to processing buffer
+System proceeds to back side capture screen
+No error if document properly positioned"
+TC-FUNC-012,Functional Testing,Document Capture - Back Side,"1. After front side capture
+2. System prompts for back side
+3. Flip document over
+4. Position back side in frame
+5. Align with capture frame
+6. Tap capture button","New screen displays automatically
+Instructions update to: 'Take a photo of the back side of your document'
+Circular/rectangular frame guides positioning
+Live preview shows document back side
+Capture button visible and accessible
+Tapping capture captures back side image
+System validates back side legibility
+Both front and back sides now saved
+System confirms both sides are ready
+Proceeds to document verification or shows success screen"
+TC-FUNC-013,Functional Testing,Document Type Validation - Valid Document,"1. Submit valid passport images (both sides)
+2. Ensure clear photo and ID visibility
+3. Verify document not expired
+4. Wait for processing","System receives both front and back images
+System analyzes document type and identifies as valid passport
+Validates document contains:
+  - Visible photo
+  - Clear name
+  - Visible ID number
+  - Other identifying information
+Checks expiration date (if present)
+Verification succeeds
+Processing completes
+Success screen appears with checkmark
+Message: 'Congratulations! Your ID is verified'
+Benefits listed with checkmarks:
+  - View a safer, more trusted feed with option to see only ID-verified members
+  - Get double the Likes (10 for ID-verified vs 5 non-verified)
+  - Receive 1 free TrueBoost per month
+  - Enjoy 5 free Ultra Likes every month
+  - Increase profile visibility and engagement with ID-verified perks
+ID-verified badge awarded
+Continue button proceeds to feed"
+TC-FUNC-014,Functional Testing,Document Type Validation - Invalid Document Type,"1. Submit non-accepted document type
+2. System analyzes document
+3. Observe error handling
+4. Review guidance provided","System receives document images
+System analyzes and attempts document identification
+System detects unsupported document type
+Error screen displays with warning icon
+Message shows: 'Please use another Identity document'
+Subtitle: 'Sorry, the identity document you used cannot be verified. Please try again with a different identity document'
+Accepted document types listed:
+  - Passport (icon)
+  - ID Card (icon)
+  - Driver's License (icon)
+Try Again button available
+Clicking Try Again returns to document capture screen
+Can retry with different document"
+TC-FUNC-015,Functional Testing,Document Quality - Blurry Image,"1. Capture blurry document image (out of focus)
+2. Submit for verification
+3. Observe quality check result","System receives blurry document image
+System analyzes image quality
+Blur detection algorithm identifies focus issues
+Quality check fails
+Error screen displays with camera icon
+Message shows: 'Blurry Image'
+Subtitle: 'Ensure details are sharp and legible'
+Reference Guide button available showing:
+  - Example of wrong side (red X)
+  - Example of correct side (green checkmark)
+Try Again button functional
+Clicking returns to document capture for new attempt"
+TC-FUNC-016,Functional Testing,Document Quality - Glare and Lighting,"1. Capture with harsh glare/reflection
+2. Capture with bright lights reflecting off document
+3. Submit image
+4. Observe detection","System receives document with glare
+System analyzes image for lighting issues
+Glare detection identifies overexposure/reflection
+Quality check fails
+Error screen displays with lighting icon
+Message shows: 'Glare & Lighting'
+Subtitle: 'Avoid bright lights reflecting on the document surface'
+Reference Guide available showing proper/improper examples
+Try Again button functional
+Returns to capture for new attempt with better lighting"
+TC-FUNC-017,Functional Testing,Document Not Verified - Failed Verification,"1. Submit valid but unverifiable document
+2. Document is readable but verification fails
+3. System processes and returns error
+4. Observe error handling","Processing begins after document submission
+System attempts to verify document content
+Verification fails (content issues, unrecognized format, etc.)
+Processing completes unsuccessfully
+Error screen displays with X icon
+Message: 'We couldn't identify your document'
+Subtitle: 'Please select the type of document you are using'
+Document type selection shown:
+  - Passport option
+  - ID Card option
+  - Driver's License option
+Helpful tips displayed:
+  - Blurry Image: 'Ensure details are sharp and legible'
+  - Glare & Lighting: 'Avoid bright lights reflecting on document'
+Try Again button available for retry"
+TC-FUNC-018,Functional Testing,Document Verification Success,"1. Submit valid, clear, properly-positioned document
+2. Both sides clear and readable
+3. All information visible
+4. Document within expiration (if applicable)
+5. Wait for processing","System receives both document images
+Document type recognized correctly
+All document elements readable
+Image quality passes all checks
+System verifies document successfully
+Processing completes
+Success screen displays with checkmark
+Message: 'Congratulations! Your ID is verified'
+All benefits display with green checkmarks:
+  - View a safer, more trusted feed
+  - Get double the Likes
+  - Receive 1 free TrueBoost
+  - Enjoy 5 free Ultra Likes
+  - Increase profile visibility and engagement
+ID-verified badge awarded
+Continue button proceeds to main feed
+Profile updated with verification badge"
+TC-FUNC-019,Functional Testing,Combined Verification Success,"1. User completes both selfie verification AND document verification
+2. Both verifications successful
+3. User receives all benefits
+4. Observe final success screen","Both selfie and document verifications complete successfully
+Final success screen displays with gold TrueCheck badge
+Title: 'It's time to get verified!'
+Badge shows premium verification status
+All 6 benefits displayed with checkmarks:
+  - View a safer, more trusted feed
+  - Get double the Likes (10 vs 5 for non-verified)
+  - Receive 1 free TrueBoost per month
+  - Enjoy 5 free Ultra Likes every month
+  - Increase profile visibility and engagement
+  - Additional premium benefits from combined verification
+Premium tier benefits:
+  - 10 Likes per month (vs 5 for single verification)
+  - 1 free TrueBoost per month
+  - 5 free Ultra Likes per month
+  - Enhanced profile visibility
+Profile shows both TrueCheck and ID-verified badges
+Continue button proceeds to enhanced feed experience"
+TC-FUNC-020,Functional Testing,Continue to Feed After Verification,"1. Complete verification (either type)
+2. Tap Continue button
+3. Observe transition to feed
+4. Verify profile updates","Smooth animated transition to main feed
+No lag or loading delays
+Feed displays with verified/unverified user profiles
+Verification badge visible on own profile
+Badges visible on other verified user profiles
+All normal app functionality works:
+  - Can browse other profiles
+  - Can see Like counts
+  - Can access messages (if applicable)
+  - Can view profile details
+  - Filtering options work (if available)
+App responds normally post-verification
+Badge persists on all subsequent screens
+No data loss or corruption"
+TC-UX-001,UI/UX Testing,Responsive Design - Mobile Devices,"Test on multiple devices:
+- iPhone SE (375x667)
+- iPhone 12 (390x844)
+- iPhone 14 Pro Max (430x932)
+- Various Android devices
+Check: button accessibility, text readability, frame positioning, landscape orientation","All UI elements properly scaled for each device
+No text overflow or truncation
+No UI elements cut off screen
+Buttons sized appropriately (44x44pt minimum) for easy tapping
+Capture frames properly positioned and visible
+Instructions readable at all font sizes
+Landscape orientation handled correctly
+Proper spacing maintained on all screen sizes
+No pixel overflow or scaling issues
+Performance consistent across devices"
+TC-UX-002,UI/UX Testing,Text and Message Clarity,"Review all user-facing text:
+- Verification instructions
+- Error messages
+- Success messages
+- Button labels
+- Modal content
+- Warning messages","All instructions clear and actionable
+Error messages explain problem and solution
+Success messages motivating and celebratory
+Button text clearly describes action (Verify Selfie, Continue, Try Again, etc.)
+Modal content easy to understand
+No confusing or ambiguous messaging
+Language is professional but friendly
+Tone consistent throughout app
+No grammatical errors
+All text is concise and direct"
+TC-UX-003,UI/UX Testing,Visual Hierarchy,"Verify visual design guides user attention:
+- Primary buttons prominence
+- Secondary buttons visibility
+- Error messages visibility
+- Success messages presentation
+- Instruction placement","Primary buttons: largest, brightest color (teal/green)
+Secondary buttons: smaller or outline style
+Error messages: red highlight with warning icon
+Success messages: green checkmark with celebratory styling
+Instructions: positioned above/near capture area
+Important information: emphasized with color or size
+User knows exactly where to focus attention
+Clear visual distinction between button types
+Error states visually distinct from normal state"
+TC-UX-004,UI/UX Testing,Color Contrast and Accessibility,"Measure contrast ratios:
+- Primary text on background
+- Button text on button
+- Error text on background
+- Link text on background
+Compare against WCAG AA standards (4.5:1 minimum)","All elements meet or exceed WCAG AA standard (≥ 4.5:1)
+Primary text: high contrast with background
+Button text: easily readable on button color
+Error messages: red text readable on light background
+Link text: sufficient contrast for visibility
+Text readable at reduced brightness
+Text readable for colorblind users
+No issues reported in contrast checker"
+TC-UX-005,UI/UX Testing,Navigation Flow,"Test forward flow: Verify button taps advance flow
+Test backward flow: Device back button returns to previous
+Test skip flow: Skip buttons skip verification
+Test retry flow: Try Again buttons return to capture/retry","Forward flow: Each tap advances properly through screens
+Backward flow: Back button returns to previous screen (not closes app)
+Skip flow: Skip buttons successfully skip verification steps
+Retry flow: Can retry indefinitely without getting stuck
+No dead-end screens
+Users can always navigate back
+Clear progression through verification steps
+No confusing navigation patterns"
+TC-PERF-001,Performance Testing,Initial Screen Load Time,"Measure cold and warm loads:
+- Get Verified screen (first load)
+- Camera capture screen
+- Processing screen
+- Results/success screen
+Acceptable time limits: <1-3 seconds","Get Verified screen cold load: < 1 second
+Get Verified screen warm load: < 500ms
+Camera capture screen: < 2 seconds
+Processing screen: displays immediately (< 500ms)
+Results screen: < 3 seconds
+All screens responsive without lag
+No frozen screens or excessive loading time
+Loading indicators appear if processing > 1 second"
+TC-PERF-002,Performance Testing,Camera Initialization,"Measure time for camera operations:
+- Camera permission request
+- Camera feed initialization
+- Image capture
+- Image save to buffer","Permission dialog appears: < 500ms
+Live preview starts: < 2 seconds
+Image captures: < 500ms
+Image saved to buffer: < 1 second
+Camera responsive and smooth
+No lag when switching between camera modes
+Video feed consistent without stuttering"
+TC-PERF-003,Performance Testing,Image Processing,"Measure processing times:
+- Local face detection
+- Image quality check
+- Document type detection
+- Server verification","Local face detection: < 1 second
+Quality check: < 1 second
+Document type detection: < 2 seconds
+Server verification: loading state shown immediately
+Results returned within reasonable time
+No timeouts
+Server processing shows progress indicator"
+TC-PERF-004,Performance Testing,Memory Usage,"Monitor memory consumption:
+- Start verification (baseline)
+- Initialize camera (+ memory)
+- Process multiple images
+- Complete verification (return to baseline)","Baseline memory usage: acceptable for app type
+Camera initialization: + 30MB (acceptable)
+Processing multiple images: + 50MB total
+After completion: returns to baseline (no leaks)
+No memory leak detected
+App remains responsive during memory usage
+No crashes due to memory issues"
+TC-SEC-001,Security Testing,Image Data Protection,"Verify data security:
+1. Capture selfie
+2. Capture document images
+3. Monitor data transmission
+4. Verify server storage
+5. Test data deletion","Images transmitted via HTTPS/TLS encryption
+All data encrypted in transit
+Local image storage encrypted on device
+Server storage encrypted and access-controlled
+Deletion request permanently removes images
+No unencrypted image storage
+No exposure of raw image data
+Compliance with data protection standards"
+TC-SEC-002,Security Testing,Biometric Data Security,"Test biometric data handling:
+1. Generate face template from selfie
+2. Verify comparison process
+3. Check data retention
+4. Verify third-party services used","Face templates encrypted in storage
+Stored securely with access controls
+Comparison done securely (client-side if possible)
+Clear retention policy documented
+Templates deleted after policy period
+Third-party services verified as secure
+No unauthorized access to templates
+Compliance with biometric data standards"
+TC-SEC-003,Security Testing,Camera Permission Handling,"Test permission scenarios:
+1. Deny camera permission
+2. Revoke permission after grant
+3. Grant permission
+4. Background/foreground app","Permission denied: graceful error message, no app crash
+Permission revoked: graceful handling with re-request
+Permission granted: camera initializes properly
+Background app: camera stops when backgrounded
+Foreground app: camera resumes when foregrounded
+No force closures
+User informed of permission status
+Can enable/disable permission anytime"
+TC-SEC-004,Security Testing,Session Security,"Test session security:
+1. Run long verification process
+2. Attempt network sniffing
+3. Verify user authentication
+4. Test CSRF protection","Session remains valid during long processes
+Session tokens encrypted and secure
+No vulnerability to network sniffing
+User authentication verified before submission
+User identity confirmed before docs processed
+CSRF tokens implemented in forms
+Session timeout implemented
+Secure cookie handling"
+TC-SEC-005,Security Testing,Input Validation,"Test input validation:
+1. Submit wrong file format
+2. Submit corrupted image
+3. Submit unexpected document
+4. Submit oversized file","Wrong format: rejected with clear error
+Corrupted file: rejected and handled gracefully
+Unexpected document: rejected with guidance
+Oversized file: compressed or rejected appropriately
+All inputs validated server-side
+No malicious input accepted
+Error messages don't expose system details
+Input sanitization implemented"
+TC-ERR-001,Error Handling,Camera Permission Denied,"Test permission denial flow:
+1. Tap verify button
+2. Deny camera permission in dialog
+3. Observe error message
+4. Tap Enable in Settings
+5. Enable permission
+6. Return to app and retry","Graceful error message displayed to user
+Explanation: Camera access required for verification
+Option to enable permission in Settings
+Settings app opens to correct location
+User can enable camera permission
+Return to app shows retry option
+Can attempt verification again after enabling
+No app crash or force closure"
+TC-ERR-002,Error Handling,Network Connectivity Loss,"Test network error handling:
+1. Start verification
+2. Disconnect network (WiFi/mobile)
+3. Attempt to submit image
+4. Reconnect network
+5. Tap retry button","Error message displayed: Network unavailable
+Clear explanation provided
+Retry button available
+Request queued for retry when connection restored
+Retry succeeds once connected
+No data loss during disconnect
+User informed of connection status"
+TC-ERR-003,Error Handling,Server Errors (5XX),"Simulate server errors:
+1. Trigger 500 error
+2. Trigger 502 error
+3. Trigger 503 error
+4. Trigger generic error","500 error: Technical issue message displayed
+502 error: Temporarily unavailable message shown
+503 error: Try again later message displayed
+Generic error: General error with retry option
+User not exposed to error codes
+User informed of next steps
+Retry available for all errors
+No app crash"
+TC-ERR-004,Error Handling,Camera Hardware Issues,"Test hardware error handling:
+1. Test unavailable camera
+2. Force camera app crash
+3. Force unexpected camera close","Unavailable camera: error message with gallery alternative
+Camera crash: app doesn't crash, error shown
+Unexpected close: graceful recovery
+User guided to alternative methods (upload from gallery)
+No data loss
+App remains stable"
+TC-ERR-005,Error Handling,Insufficient Storage Space,"Test storage error scenarios:
+1. Device with <100MB free space
+2. Attempt capture
+3. Attempt gallery import","Warning displayed before capture attempt
+Clear message: Insufficient storage
+Suggestion to free up space
+Capture not attempted if insufficient space
+Gallery import shows error if space needed
+User guided to solution
+No partial file storage"
+TC-DATA-001,Data Validation,Selfie Face Detection Validation,"Test face detection accuracy:
+1. Single face in frame
+2. Multiple faces in frame
+3. No face in frame
+4. Partial face visible
+5. Animal/object instead of face","Single face: detected with 100% accuracy
+Multiple faces: detected, user prompted to retry
+No face: detection fails, error message shown
+Partial face: detected as insufficient, error shown
+Animal/object: not detected as face, error shown
+False positives: < 1%
+Detection speed: < 1 second"
+TC-DATA-002,Data Validation,Document Boundary Detection,"Test document positioning validation:
+1. Document fully within frame
+2. Document partially in frame
+3. Rotated document at angle
+4. Document too close to camera
+5. Document too far from camera","Fully in frame: accepted for processing
+Partially in frame: rejected with position guidance
+Rotated document: accepted if readable
+Too close: rejected, distance prompt shown
+Too far: rejected, closer prompt shown
+Guidance helps user reposition
+Clear feedback on positioning"
+TC-DATA-003,Data Validation,Document Type Recognition,"Test document type accuracy:
+1. US Passport submission
+2. US Driver's License submission
+3. ID Card submission
+4. Invalid document submission","Passport: identified >95% accurately
+Driver's License: identified >95% accurately
+ID Card: identified >95% accurately
+Invalid documents: rejected >99% of time
+Rare false positives handled with fallback
+Clear rejection messages for invalid types"
+TC-DATA-004,Data Validation,Expiration Date Validation,"Test expiration date checking:
+1. Not expired document
+2. Expired document
+3. Expiration not readable
+4. Document expiring soon","Not expired: accepted for verification
+Expired: rejected with error message
+Expiration unreadable: manual review requested or rejected
+Expiring soon: accepted (policy determined)
+Accurate date parsing
+Clear messaging on expiration status"
+TC-ACC-001,Accessibility Testing,Screen Reader Compatibility,"Enable screen reader and test:
+1. Navigate through flow
+2. Read all UI elements
+3. Use all interactive elements","Buttons: labels announced clearly and accurately
+Instructions: read in logical order
+Icons: proper alt text or labels provided
+Input fields: labels properly associated
+Error messages: announced to user
+Success messages: announced clearly
+Lists: structure properly conveyed
+All interactive elements accessible"
+TC-ACC-002,Accessibility Testing,VoiceOver (iOS) Functionality,"Enable VoiceOver and test:
+1. Navigate buttons with VoiceOver
+2. Use rotor for navigation
+3. Capture image with VoiceOver
+4. Read error/success messages","App fully functional with VoiceOver enabled
+Rotor available for efficient navigation
+Buttons selectable and activatable via VoiceOver
+Capture status announced appropriately
+Error messages read clearly
+Success messages announced
+All gestures work properly
+No VoiceOver-specific issues"
+TC-ACC-003,Accessibility Testing,TalkBack (Android) Functionality,"Enable TalkBack and test:
+1. Navigate with TalkBack
+2. Use all buttons
+3. Capture with TalkBack active
+4. Read all messages","App functional with TalkBack enabled
+Buttons selectable with labels announced
+Touch gestures work properly
+Capture flow navigable
+All status messages read clearly
+Error messages announced
+Success messages conveyed
+No Android-specific accessibility issues"
+TC-ACC-004,Accessibility Testing,Touch Target Size,"Measure all interactive elements:
+- Button sizes
+- Touch target spacing
+- Tap area accuracy","All buttons: minimum 44x44pt size
+Touch targets: minimum 44x44pt
+Spacing between targets: minimum 8pt
+No overlapping tap targets
+Prevents accidental taps
+Accessible on all devices
+Meets WCAG accessibility standards"
+TC-ACC-005,Accessibility Testing,Color Independence,"Test non-color information conveyance:
+1. Check error states
+2. Check success states
+3. Check disabled states","Error state: red color + icon + text
+Success state: green color + checkmark + text
+Disabled state: gray + reduced opacity + other indicator
+Information not conveyed by color alone
+Multiple indicators for each state
+Colorblind users can understand state
+Clear distinction between states"
+TC-LOC-001,Localization Testing,Text Translation,"Test in multiple languages:
+1. Spanish interface
+2. French interface
+3. German interface
+4. Portuguese interface","All text properly translated in each language
+No English text fallback
+Translations accurate and contextually appropriate
+Button labels translated consistently
+Error messages translated
+Success messages translated
+Instructions clear in each language
+No formatting issues with translated text"
+TC-LOC-002,Localization Testing,Cultural Appropriateness,"Review cultural aspects:
+1. Sample user images
+2. Message tone and phrasing
+3. Cultural references and context","Diverse representation in user images
+No culturally insensitive images
+Message tone appropriate for all cultures
+No offensive terminology
+Cultural references universally understood
+Phrasing respectful across cultures
+Visual elements culturally appropriate
+No assumptions about user background"
+TC-COMPAT-001,Compatibility Testing,iOS Version Compatibility,"Test on supported iOS versions:
+1. iOS 14
+2. iOS 15
+3. iOS 16
+4. iOS 17","App functions completely on iOS 14
+App functions completely on iOS 15
+App functions completely on iOS 16
+App functions completely on iOS 17
+All features work on all versions
+No version-specific bugs
+No compatibility warnings
+Performance consistent across versions"
+TC-COMPAT-002,Compatibility Testing,Android Version Compatibility,"Test on supported Android versions:
+1. Android 11
+2. Android 12
+3. Android 13
+4. Android 14","App functions completely on Android 11
+App functions completely on Android 12
+App functions completely on Android 13
+App functions completely on Android 14
+All features work on all versions
+No version-specific bugs
+No compatibility warnings
+Performance consistent across versions"
+TC-COMPAT-003,Compatibility Testing,Device Capability Variations,"Test on devices with various specs:
+1. Low RAM device
+2. Old camera hardware
+3. Limited processing power
+4. Device without front camera","Low RAM device: app runs without memory errors
+Old camera: capture still works adequately
+Limited processor: processing completes (may be slower)
+No front camera: graceful error with upload alternative
+App remains stable on all devices
+Performance acceptable even on older devices
+No force closures"
+TC-REG-001,Regression Testing,Post-Update Verification Flow,"After app update test:
+1. Complete selfie verification
+2. Complete document verification
+3. Complete combined verification
+4. Check existing user data","Selfie flow works as before post-update
+Document flow works as before post-update
+Combined flow works as before post-update
+Existing verified user badges persist
+All functionality unchanged
+No new bugs introduced
+Performance maintained
+No data loss or corruption"
+TC-REG-002,Regression Testing,Cross-Version Verification,"Test verification persistence:
+1. User verified on old version
+2. Update app to new version
+3. Verify badge still visible
+4. Check data consistency","Verification badge visible after update
+Badge displays correctly on profile
+Verification status persists across versions
+Data migrated properly
+No badge loss after update
+Verification benefits still apply
+Profile data consistent
+Enhanced features work post-update"
